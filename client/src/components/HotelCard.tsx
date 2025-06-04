@@ -2,7 +2,25 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {assets} from '../assets/assets'
 
-const HotelCard = ({room, index}) => {
+
+interface Hotel{
+    name: string;
+    address: string;
+}
+
+interface Room {
+    _id: string;
+    images: string[];
+    hotel: Hotel;
+    pricePerNight: number;
+}
+
+interface HotelCardProps{
+    room:Room
+    index:number;
+}
+
+const HotelCard = ({room, index}:HotelCardProps) => {
   return (
     <Link to={'/rooms/'+room._id} onClick={()=> scrollTo(0,0)} key={room._id}  className='relative max-w-70 w-full rounded-xl overflow-hidden bg-white text-gray-500/90 shadow-[0px_4px_4px_rgba(0,0,0,0.05)]'>
         <img src={room.images[0]} alt=""/>

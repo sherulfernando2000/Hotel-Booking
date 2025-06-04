@@ -1,10 +1,10 @@
 import React from 'react'
 
 interface Title {
-    title: string;
+    title?: string;
     subtitle: string;
-    align:string
-    font:string
+    align?:string
+    font?:string
 }
 
 const Title = ({title, subtitle, align , font}:Title) => {
